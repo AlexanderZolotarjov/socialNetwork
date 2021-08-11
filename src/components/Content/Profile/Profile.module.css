@@ -1,0 +1,28 @@
+.info {
+    margin: 0 0 0 15px;
+    display: flex;
+}
+.info__photo {
+    padding: 10px 7px 10px 0;
+}
+.info__photo img {
+    width: 15vw;
+}
+.info__text {
+    padding: 10px 10px 10px 7px;
+    font-size: 18px;
+    color: rgb(93, 93, 151);
+}
+.info__name {
+    margin: 0 0 20px 0;
+}
+.info__points {
+
+}
+.info__list {
+    
+}
+.info__item {
+    
+}
+
