@@ -7,10 +7,12 @@ import { BrowserRouter } from 'react-router-dom';
 const App = (props) => {
     return (
         <BrowserRouter>
-            <div className="wrapper container">
-                <Header />
-                <Sidebar />
-                <Content />
+            <div className="container">
+                <div className="wrapper">
+                    <Header />
+                    <Sidebar />
+                    <Content />
+                </div>
             </div>
         </BrowserRouter>
     );

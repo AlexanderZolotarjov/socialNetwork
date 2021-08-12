@@ -1,16 +1,13 @@
 .messages {
-    font-size: 30px;
-    min-height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr;
+    display: flex;
 }
 
 .messages__contacts {
+    flex: 0 0 20%;
     border-right: 1px solid rgb(93, 93, 151);
 }
 
 .messages__chats {
-
+    flex: 0 0 80%;
 }
 
