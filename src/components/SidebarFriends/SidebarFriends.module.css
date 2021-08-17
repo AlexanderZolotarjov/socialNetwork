@@ -1,0 +1,9 @@
+.sidebarFriends {
+    grid-area: sidebarfriends;
+    background-color: rgb(213, 213, 255);
+    border: 1px solid rgb(93, 93, 151);
+}
+.sidebarFriends__list {
+    display: grid;
+    grid-template: repeat(2,70px) / repeat(3,33.33%);
+}

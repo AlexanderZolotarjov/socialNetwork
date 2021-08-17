@@ -1,27 +1,27 @@
+import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
-
-
-const MyPosts = () => {
-    let PostsData = [
-        {id: 1, message: "Hi, how are you?", likesCount: 11},
-        {id: 2, message: "We will be happy!", likesCount: 28},
-        {id: 3, message: "Hi, I'm fine, and you?", likesCount: 14},
-    ] // Массив данных для постов
-    
-    let PostsElements = PostsData.map((post) => {
+const MyPosts = (props) => {
+    let PostsElements = props.postsdata.map((post) => {
         return (
-            <Post likesCount={post.likesCount} message={post.message} />
+            <Post likescount={post.likesCount} message={post.message} />
         )
     }) // Массив элементов разметки, созданный на основе массива данных для постов
+
+    let newPostElement = React.createRef();
     
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert (text);
+    }
+
     return (
         <div className={`${s.content__posts} ${s.posts}`}>
             <div className={s.posts__title}>Posts</div>
             <div className={s.posts__new}>
-                <textarea placeholder="Please enter your message!"></textarea>
-                <button>Send post</button>
+                <textarea ref={newPostElement} placeholder="Please enter your message!"></textarea>
+                <button onClick={ addPost }>Add post</button>
             </div>
             <div className={s.posts__body}>
                 {PostsElements}

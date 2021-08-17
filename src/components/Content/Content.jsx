@@ -7,13 +7,12 @@ import Settings from './Settings/Settings';
 import s from './Content.module.css';
 import { Route } from 'react-router-dom';
 
-
-
-const Content = () => {
+const Content = (props) => {
     return (
         <article className={s.content}>
-            <Route path='/messages' component={Messages} />
-            <Route path='/profile' component={Profile} />
+            <Route path='/messages' render={ () => <Messages dialogsdata={props.state.DialogsPage} /> } />
+            <Route exact path='/' render={ () => <Profile profiledata={props.state.ProfilePage} /> } />
+            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} /> } />
 
             <Route path='/news' component={News} />
             <Route path='/music' component={Music} />

@@ -1,5 +1,6 @@
 .messages {
     display: flex;
+    height: 100%;
 }
 
 .messages__contacts {

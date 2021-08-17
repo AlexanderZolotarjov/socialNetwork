@@ -1,22 +1,20 @@
 
 .chats {
+    max-height: 100%;
     padding: 10px;
-}
-.chats__body {
     display: flex;
     flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    background-color: hotpink;
+
 }
-.chats__item {
-    align-self: flex-start;
-    background-color: #fff;
-    border: 1px solid  rgb(93, 93, 151);
-    margin: 0 50px 10px 0;
-    padding: 10px;
-    border-radius: 12px;
-    font-size: 20px;
+.chats__body {
+    overflow: scroll;
+    background-color: green;
 }
-.chats__item_friend {
-    align-self: flex-end;
-    margin: 0 0 10px 50px;
+.chats__newchat {
+    background-color: rgb(240, 70, 217);
 }
+
 

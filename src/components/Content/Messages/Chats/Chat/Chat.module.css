@@ -1,0 +1,43 @@
+.chat {
+    position: relative;
+}
+.chat_person {
+    align-self: flex-start;
+    margin: 0 50px 0 0px;
+}
+.chat_friend {
+    align-self: flex-end;
+    margin: 0 0 0 50px;
+}
+.chat__body {
+    margin: 0 50px 10px 50px;
+    background-color: #fff;
+    border: 1px solid  rgb(93, 93, 151);
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+
+.chat__image {
+
+}
+.chat__image img {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.chat_person .chat__body .chat__image img {
+    left: 0px;
+}
+.chat_friend .chat__body .chat__image img {
+    right: 0px;
+}
+.chat__message {
+
+}
+

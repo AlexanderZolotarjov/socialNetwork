@@ -1,41 +1,24 @@
-import s from './Chats.module.css'
+import s from './Chats.module.css';
+import Chat from './Chat/Chat';
+import NewChat from './NewChat/NewChat';
+
+
 
 const Chats = (props) => {
-    const authorID = 1;//айди автора с которым мы сравниваем текущий айди
-
-    const Chat = (props) => {
-        if (props.authorID == authorID) {
+    let ChatsElements = props.chatsdata.
+        map( chat => {
             return (
-                <div className={s.chats__item}>
-                    {props.message}
-                </div>
+                <Chat message={chat.message} authorID={chat.personID} photo={props.contactsdata[chat.personID - 1].photo} />
             )
-        } else {
-            return (
-                <div className={`${s.chats__item} ${s.chats__item_friend}`}>
-                    {props.message}
-                </div>
-            )
-        }
-    } 
-    //Если айди автора совпадает с заданным айди то просто выдаем разметку,
-    //если не совпадает то выдаем разметку с классом _друг
-
-    let ChatsData = [
-        {id: 1, authorID: 1, message: "Hi! My name is Alexandr. I live in town Mospino. I learn Java Sctipt and React. I realy want to be a programmist."},
-        {id: 2, authorID: 2, message: "Hello! Alexandr, it's really interesting. Thank you for this story!"},
-        {id: 3, authorID: 1, message: "Yo!"},
-        {id: 4, authorID: 2, message: "Yo!"},
-    ] //массив данных по друзьям
-
-    let ChatsElements = ChatsData.
-        map( chat =>  <Chat message={chat.message} authorID={chat.authorID} />)
-        //новый массив, уже с разметкой по друзьям
+        })//новый массив, уже с разметкой по друзьям
 
     return(
         <div className={s.chats}>
             <div className={s.chats__body}>
                 {ChatsElements}
+            </div>
+            <div className={s.chats__newchat}>
+                <NewChat />
             </div>
         </div>
     )

@@ -1,0 +1,33 @@
+.contact {
+
+}
+.contact__image {
+
+}
+.contact__image img {
+    position: absolute;
+    top: 10px;
+    left: 7px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.contact__link {
+    position: relative;
+    padding: 18px 10px 18px 55px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    line-height: 1.2;
+    color: rgb(93, 93, 151);
+}
+.contact__link:hover {
+    background-color: rgba(56, 175, 255, 0.12);
+}
+.contact__link.active {
+    background-color: rgba(56, 175, 255, 0.383);
+}
+
+
