@@ -2,6 +2,7 @@
     position: relative;
     margin: 0 0 10px 0;
     display: flex;
+    align-items: center;
     min-height: 5vw;
     padding: 10px;
     border: 1px solid rgb(93, 93, 151);
@@ -9,14 +10,14 @@
     border-radius: 10px;
 }
 .post__image {
+    flex: 0 0 60px;
+    margin: 0 10px 0 0;
     position: relative;
-    height: 5vw;
-    width: 5vw;
-    overflow: hidden;
-    border-radius: 50%;
+    height: 60px;
 }
 .post__image img {
     position: absolute;
+    border-radius: 50%;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -30,7 +31,7 @@
     justify-content: space-between;
 }
 .post__text {
-    margin: 0 0 0 20px;
+    padding: 0 0 30px 0;
     font-size: 20px;
 }
 .post__button {
@@ -40,21 +41,31 @@
     position: absolute;
     bottom: 10px;
     right: 20px;
+}
+.post__sublikes {
     display: flex;
     align-items: center;
 }
 .post__button a {
     color: rgb(0, 0, 0);
     display: inline-block;
-    padding: 4px 10px;
+    padding: 6px 10px;
     background-color: #ffca2c;
     border-radius: 6px;
 }
 .post__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: rgb(0, 0, 0);
     margin-left: 10px;
     background-color: rgba(255, 21, 21, 0.644);
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     padding: 6px;
     font-size: 12px;
+}
+.post__quantityitem {
+
 }

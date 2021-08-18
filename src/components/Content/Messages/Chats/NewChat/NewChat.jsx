@@ -4,10 +4,10 @@ let NewChat = (props) => {
     return (
         <div className={s.newchat}>
             <div className={s.newchat__input}>
-                <textarea></textarea>
+                <textarea ></textarea>
             </div>
             <div className={s.newchat__button}>
-                <button>asfdafsd</button>
+                <button>send</button>
             </div>
         </div>
     )

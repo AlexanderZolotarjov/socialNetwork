@@ -1,20 +1,35 @@
 
 .chats {
     max-height: 100%;
-    padding: 10px;
     display: flex;
     flex-direction: column;
     display: grid;
     grid-template-rows: 1fr 100px;
-    background-color: hotpink;
 
 }
 .chats__body {
-    overflow: scroll;
-    background-color: green;
+    padding: 10px;
+    margin: 0 10px 0 0;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+}
+.chats__body::-webkit-scrollbar {
+    display: block;
+    width: 7px;
+    background-color: transparent;
+}
+.chats__body::-webkit-scrollbar-track {
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.chats__body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(93, 93, 151);
 }
 .chats__newchat {
-    background-color: rgb(240, 70, 217);
+    padding: 2px 7px;
+    background-color: rgba(137, 43, 226, 0.123);
 }
 
 

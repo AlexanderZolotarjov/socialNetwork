@@ -1,16 +1,37 @@
 .newchat {
-
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 .newchat__input {
-
+    flex: 0 0 80%;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 .newchat__input textarea {
-
+    border-radius: 7px;
+    padding: 10px;
+    font-size: 18px;
+    color: rgb(93, 93, 151);
+    width: 100%;
+    height: 90%;
+    resize: none;
 }
 
 .newchat__button {
-
+    flex: 0 0 20%;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 5px 0 5px 5px;
 }
 .newchat__button button {
-
+    text-transform: uppercase;
+    background-color: rgba(123, 224, 64, 0.85);
+    font-size: 16px;
+    color: rgb(93, 93, 151);
+    height: 40%;
+    width: 100%;
+    border-radius: 5px;
 }

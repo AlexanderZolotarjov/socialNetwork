@@ -9,10 +9,16 @@ const Post = (props) => {
             <div className={s.post__body}>
                 <div className={s.post__text}>{ props.message }</div>
                 <div className={s.post__likes}>
-                    <div className={s.post__button}>
-                        <a href="#">like</a>
+                    <div className={s.post__sublikes}>
+                        <div className={s.post__button}>
+                            <a href="#">like</a>
+                        </div>
+                        <div className={s.post__quantity}>
+                            <div className={s.post__quantityitem}>
+                                { props.likescount }
+                            </div>
+                        </div>
                     </div>
-                    <div className={s.post__quantity}>{ props.likescount }</div>
                 </div>
             </div>
         </div>

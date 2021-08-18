@@ -10,10 +10,11 @@ const MyPosts = (props) => {
     }) // Массив элементов разметки, созданный на основе массива данных для постов
 
     let newPostElement = React.createRef();
-    
+
     let addPost = () => {
         let text = newPostElement.current.value;
-        alert (text);
+        props.addpost(text);
+        newPostElement.current.value = '';
     }
 
     return (

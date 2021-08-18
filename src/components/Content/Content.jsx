@@ -12,7 +12,7 @@ const Content = (props) => {
         <article className={s.content}>
             <Route path='/messages' render={ () => <Messages dialogsdata={props.state.DialogsPage} /> } />
             <Route exact path='/' render={ () => <Profile profiledata={props.state.ProfilePage} /> } />
-            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} /> } />
+            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} /> } />
 
             <Route path='/news' component={News} />
             <Route path='/music' component={Music} />

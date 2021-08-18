@@ -1,28 +1,19 @@
-.info {
-    margin: 0 0 0 15px;
-    display: flex;
+.profile {
+    margin: 0 10px 0 0;
+    overflow-y: scroll;
+    max-height: 100%;
 }
-.info__photo {
-    padding: 10px 7px 10px 0;
+.profile::-webkit-scrollbar {
+    display: block;
+    width: 7px;
+    background-color: transparent;
 }
-.info__photo img {
-    width: 15vw;
+.profile::-webkit-scrollbar-track {
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
-.info__text {
-    padding: 10px 10px 10px 7px;
-    font-size: 18px;
-    color: rgb(93, 93, 151);
+.profile::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(93, 93, 151);
 }
-.info__name {
-    margin: 0 0 20px 0;
-}
-.info__points {
-
-}
-.info__list {
-    
-}
-.info__item {
-    
-}
-
