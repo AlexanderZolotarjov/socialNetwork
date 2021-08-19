@@ -4,15 +4,15 @@ import SidebarFriend from './SidebarFriend/SidebarFriend';
 const SidebarFriends = (props) => {
     let SidebarData =  props.contactsdata.map( (contact) => {
         return (
-            <SidebarFriend name={contact.name} photo={contact.photo} />
+            <SidebarFriend key={contact.personID} name={contact.name} photo={contact.photo} />
         )
     })
     return (
-        <sidebar className={s.sidebarFriends}>
+        <div className={s.sidebarFriends}>
             <ul className={s.sidebarFriends__list}>
                 {SidebarData}
             </ul>
-        </sidebar>
+        </div>
     )
 }
 

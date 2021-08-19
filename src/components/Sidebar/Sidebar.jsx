@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
     return (
-        <sidebar className={s.sidebar}>
+        <div className={s.sidebar}>
             <ul className={s.sidebar__list}>
                 <li className={s.sidebar__item}>
                     <NavLink className={s.sidebar__link} activeClassName={s.active} to="/profile">Profile</NavLink>
@@ -21,7 +21,7 @@ const Sidebar = () => {
                     <NavLink  className={s.sidebar__link} activeClassName={s.active} to="/settings">Settings</NavLink>
                 </li>
             </ul>
-        </sidebar>
+        </div>
     )
 }
 

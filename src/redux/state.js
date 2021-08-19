@@ -2,19 +2,23 @@ import { rerenderEntireTree } from "../render";
 
 // ? FUNCTIONS:
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let quantlityPosts = Object.keys(ProfilePage.PostsData).length;
     let newPost = {
         id: quantlityPosts + 1,
-        message: postMessage,
+        message: State.ProfilePage.newPostText,
         likesCount: 0,
     }
     ProfilePage.PostsData.push(newPost)
     rerenderEntireTree(State);
 } // Добавление новой записи
 
-// ?___________
+export let changeArea = (value) => {
+    ProfilePage.newPostText.text = value
+    rerenderEntireTree(State);
+}
 
+// ?___________
 
 let ContactsData = [
     {personID: 1, name: "Alexandr", photo: "https://th.wallhaven.cc/lg/ne/nejzko.jpg",},
@@ -36,6 +40,9 @@ let ProfilePage = {
         {id: 2, message: "Идёт направо — песнь заводит, налево — сказку говорит. Там чудеса: там леший бродит. Русалка на ветвях сидит", likesCount: 28},
         {id: 3, message: "Там на неведомых дорожках - следы невиданных зверей, избушка там на курьих ножках стоит без окон, без дверей", likesCount: 14},
     ],  // Массив данных для постов
+    newPostText: {
+        text: '',
+    }
 }  // Масств данных для профайла
 
 let DialogsPage = {
@@ -58,5 +65,6 @@ let State = {
     DialogsPage: DialogsPage,
 } //собираем всё в один объект
 
+window.state = State;
 
 export default State;

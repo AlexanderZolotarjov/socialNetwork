@@ -8,11 +8,12 @@ import s from './Content.module.css';
 import { Route } from 'react-router-dom';
 
 const Content = (props) => {
+    
     return (
         <article className={s.content}>
             <Route path='/messages' render={ () => <Messages dialogsdata={props.state.DialogsPage} /> } />
-            <Route exact path='/' render={ () => <Profile profiledata={props.state.ProfilePage} /> } />
-            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} /> } />
+            <Route exact path='/' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} changearea={props.changearea} /> } />
+            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} changearea={props.changearea} /> } />
 
             <Route path='/news' component={News} />
             <Route path='/music' component={Music} />
