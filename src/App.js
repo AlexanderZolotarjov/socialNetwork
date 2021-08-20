@@ -11,7 +11,7 @@ const App = (props) => {
                 <Header />
                 <Sidebar />
                 <SidebarFriends contactsdata={props.state.SidebarPage.ContactsData}/>
-                <Content state={props.state} addpost={props.addpost} changearea={props.changearea} />
+                <Content state={props.state} addpost={props.addpost} changeareapost={props.changeareapost} addchat={props.addchat} changeareachat={props.changeareachat} />
             </div>
         </div>
     );

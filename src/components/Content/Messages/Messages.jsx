@@ -9,7 +9,7 @@ const Messages = (props) => {
                 <Contacts contactsdata={props.dialogsdata.ContactsData} />
             </div>
             <div className={s.messages__chats}>
-                <Chats chatsdata={props.dialogsdata.ChatsData} contactsdata={props.dialogsdata.ContactsData} />
+                <Chats dialogsdata={props.dialogsdata} contactsdata={props.dialogsdata.ContactsData} addchat={props.addchat} changeareachat={props.changeareachat} />
             </div>
         </div>
     )

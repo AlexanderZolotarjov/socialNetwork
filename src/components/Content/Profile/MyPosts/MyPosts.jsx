@@ -17,7 +17,7 @@ const MyPosts = (props) => {
 
     let onPostChange = () => {
         let value = newPostElement.current.value;
-        props.changearea(value)
+        props.changeareapost(value)
     }
 
     return (

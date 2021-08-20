@@ -3,9 +3,9 @@ import { rerenderEntireTree } from "../render";
 // ? FUNCTIONS:
 
 export let addPost = () => {
-    let quantlityPosts = Object.keys(ProfilePage.PostsData).length;
+    let quantityPosts = Object.keys(ProfilePage.PostsData).length;
     let newPost = {
-        id: quantlityPosts + 1,
+        id: quantityPosts + 1,
         message: State.ProfilePage.newPostText.text,
         likesCount: 0,
     }
@@ -14,10 +14,30 @@ export let addPost = () => {
     rerenderEntireTree(State);
 } // Добавление новой записи
 
-export let changeArea = (value) => {
+export let changeAreaPost = (value) => {
     ProfilePage.newPostText.text = value
     rerenderEntireTree(State);
 }
+
+
+
+export let addChat = () => {
+    let quantityChats = State.DialogsPage.ChatsData.length + 1;
+    State.DialogsPage.ChatsData.push({
+        id: quantityChats,
+        personID: 1,
+        message: State.DialogsPage.newChatText
+    });
+    State.DialogsPage.newChatText = '';
+
+    rerenderEntireTree(State);
+}
+
+export let changeAreaChat = (value) => {
+    State.DialogsPage.newChatText = value;
+    rerenderEntireTree(State);
+}
+
 
 // ?___________
 
@@ -58,6 +78,7 @@ let DialogsPage = {
         {id: 7, personID: 1, message: "Некоторое время я наблюдал за ней. С грацией бегемота сновала она взад и вперед между автомобильными радиаторами и глухим голосом напевала песню о верном гусаре."},
         {id: 8, personID: 2, message: "На столе у окна стояли две бутылки коньяка. В одной уже почти ничего не оставалось. Накануне вечером она была полна."},
     ],  // Массив данных чатов
+    newChatText: '',
 }  // Массив данных для диалогов
 
 let State = {
