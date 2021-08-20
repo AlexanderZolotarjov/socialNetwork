@@ -13,7 +13,6 @@ const MyPosts = (props) => {
 
     let addPost = () => {
         props.addpost();
-        props.changearea('');
     }
 
     let onPostChange = () => {

@@ -6,10 +6,11 @@ export let addPost = () => {
     let quantlityPosts = Object.keys(ProfilePage.PostsData).length;
     let newPost = {
         id: quantlityPosts + 1,
-        message: State.ProfilePage.newPostText,
+        message: State.ProfilePage.newPostText.text,
         likesCount: 0,
     }
-    ProfilePage.PostsData.push(newPost)
+    State.ProfilePage.PostsData.push(newPost);
+    State.ProfilePage.newPostText.text = '';
     rerenderEntireTree(State);
 } // Добавление новой записи
 
