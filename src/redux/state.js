@@ -1,41 +1,46 @@
-import { rerenderEntireTree } from "../render";
+
 
 // ? FUNCTIONS:
+let rerenderEntireTree;
+
+export let getRerenderEntireTree = (rerender) =>{
+    rerenderEntireTree = rerender;
+}
 
 export let addPost = () => {
     let quantityPosts = Object.keys(ProfilePage.PostsData).length;
     let newPost = {
         id: quantityPosts + 1,
-        message: State.ProfilePage.newPostText.text,
+        message: state.ProfilePage.newPostText.text,
         likesCount: 0,
     }
-    State.ProfilePage.PostsData.push(newPost);
-    State.ProfilePage.newPostText.text = '';
-    rerenderEntireTree(State);
+    state.ProfilePage.PostsData.push(newPost);
+    state.ProfilePage.newPostText.text = '';
+    rerenderEntireTree(state);
 } // Добавление новой записи
 
 export let changeAreaPost = (value) => {
-    ProfilePage.newPostText.text = value
-    rerenderEntireTree(State);
+    ProfilePage.newPostText.text = value;
+    rerenderEntireTree(state);
 }
 
 
 
 export let addChat = () => {
-    let quantityChats = State.DialogsPage.ChatsData.length + 1;
-    State.DialogsPage.ChatsData.push({
+    let quantityChats = state.DialogsPage.ChatsData.length + 1;
+    state.DialogsPage.ChatsData.push({
         id: quantityChats,
         personID: 1,
-        message: State.DialogsPage.newChatText
+        message: state.DialogsPage.newChatText
     });
-    State.DialogsPage.newChatText = '';
+    state.DialogsPage.newChatText = '';
 
-    rerenderEntireTree(State);
+    rerenderEntireTree(state);
 }
 
 export let changeAreaChat = (value) => {
-    State.DialogsPage.newChatText = value;
-    rerenderEntireTree(State);
+    state.DialogsPage.newChatText = value;
+    rerenderEntireTree(state);
 }
 
 
@@ -81,12 +86,12 @@ let DialogsPage = {
     newChatText: '',
 }  // Массив данных для диалогов
 
-let State = {
+let state = {
     SidebarPage: SidebarPage,
     ProfilePage: ProfilePage,
     DialogsPage: DialogsPage,
 } //собираем всё в один объект
 
-window.state = State;
+window.state = state;
 
-export default State;
+export default state;
