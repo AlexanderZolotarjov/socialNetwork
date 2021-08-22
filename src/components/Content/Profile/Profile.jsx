@@ -9,7 +9,7 @@ const Profile = (props) => {
     return (
         <div ref={ profileElement } className={s.profile}>
             <Info />
-            <MyPosts newposttext={props.profiledata.newPostText} postsdata={props.profiledata.PostsData} addpost={props.addpost} changeareapost={props.changeareapost} />
+            <MyPosts profiledata={props.profiledata} dispatch={props.dispatch} />
         </div>
     )
 }

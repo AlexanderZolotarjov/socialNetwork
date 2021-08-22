@@ -11,9 +11,9 @@ const Content = (props) => {
     
     return (
         <article className={s.content}>
-            <Route path='/messages' render={ () => <Messages dialogsdata={props.state.DialogsPage} addchat={props.addchat} changeareachat={props.changeareachat} /> } />
-            <Route exact path='/' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} changeareapost={props.changeareapost} /> } />
-            <Route path='/profile' render={ () => <Profile profiledata={props.state.ProfilePage} addpost={props.addpost} changeareapost={props.changeareapost} /> } />
+            <Route path='/messages' render={ () => <Messages contactsdata={props.state.ContactsData} dialogsdata={props.state.DialogsPage} dispatch={props.dispatch} /> } />
+            <Route exact path='/' render={ () => <Profile contactsdata={props.state.ContactsData} profiledata={props.state.ProfilePage} dispatch={props.dispatch} /> } />
+            <Route path='/profile' render={ () => <Profile contactsdata={props.state.ContactsData} profiledata={props.state.ProfilePage} dispatch={props.dispatch} /> } />
 
             <Route path='/news' component={News} />
             <Route path='/music' component={Music} />

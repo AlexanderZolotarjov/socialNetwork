@@ -17,7 +17,6 @@ const Chats = (props) => {
         }
     }
     setTimeout(chatsScroll, 10)
-
     let ChatsElements = props.dialogsdata.ChatsData.
         map( chat => {
             return (
@@ -31,7 +30,7 @@ const Chats = (props) => {
                 {ChatsElements}
             </div>
             <div className={s.chats__newchat}>
-                <NewChat dialogsdata={props.dialogsdata} addchat={props.addchat} changeareachat={props.changeareachat} />
+                <NewChat dialogsdata={props.dialogsdata} dispatch={props.dispatch} />
             </div>
         </div>
     )

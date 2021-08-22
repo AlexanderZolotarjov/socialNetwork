@@ -5,17 +5,21 @@ let NewChat = (props) => {
     let newChatElement = React.createRef();
     
     let onChatChange = () => {
-        let value = newChatElement.current.value;
-        props.changeareachat(value)
-
-    }
+        props.dispatch({
+            type: 'CHANGE-AREA-CHAT',
+            value: newChatElement.current.value,
+        })
+    };
+    let addChat = () => {
+        props.dispatch({type: 'ADD-CHAT'})
+    };
     return (
         <div className={s.newchat}>
             <div className={s.newchat__input}>
-                <textarea onChange={ onChatChange } ref={newChatElement} value={props.dialogsdata.newChatText} ></textarea>
+                <textarea onChange={ onChatChange } ref={newChatElement} value={props.dialogsdata.newChatText.text} ></textarea>
             </div>
             <div className={s.newchat__button}>
-                <button onClick={ props.addchat }>send</button>
+                <button onClick={ addChat }>send</button>
             </div>
         </div>
     )

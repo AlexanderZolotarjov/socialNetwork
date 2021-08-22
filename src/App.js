@@ -10,8 +10,8 @@ const App = (props) => {
             <div className="wrapper">
                 <Header />
                 <Sidebar />
-                <SidebarFriends contactsdata={props.state.SidebarPage.ContactsData}/>
-                <Content state={props.state} addpost={props.addpost} changeareapost={props.changeareapost} addchat={props.addchat} changeareachat={props.changeareachat} />
+                <SidebarFriends contactsdata={props.state.ContactsData}/>
+                <Content state={props.state} dispatch={props.dispatch} />
             </div>
         </div>
     );

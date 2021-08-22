@@ -6,10 +6,10 @@ const Messages = (props) => {
     return(
         <div className={s.messages}>
             <div className={s.messages__contacts}>
-                <Contacts contactsdata={props.dialogsdata.ContactsData} />
+                <Contacts contactsdata={props.contactsdata} />
             </div>
             <div className={s.messages__chats}>
-                <Chats dialogsdata={props.dialogsdata} contactsdata={props.dialogsdata.ContactsData} addchat={props.addchat} changeareachat={props.changeareachat} />
+                <Chats dialogsdata={props.dialogsdata} contactsdata={props.contactsdata} dispatch={props.dispatch} />
             </div>
         </div>
     )
