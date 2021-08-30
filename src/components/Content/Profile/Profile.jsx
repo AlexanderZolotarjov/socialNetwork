@@ -1,5 +1,5 @@
 import Info from './Info/Info';
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import s from './Profile.module.css';
 import React from 'react';
 
@@ -9,7 +9,7 @@ const Profile = (props) => {
     return (
         <div ref={ profileElement } className={s.profile}>
             <Info />
-            <MyPosts profiledata={props.profiledata} dispatch={props.dispatch} />
+            <MyPostsContainer />
         </div>
     )
 }

@@ -18,6 +18,9 @@ const Sidebar = () => {
                     <NavLink className={s.sidebar__link} activeClassName={s.active} to="/music">Music</NavLink>
                 </li>
                 <li className={`${s.sidebar__item} ${s.sidebar__item_mode}`}>
+                    <NavLink  className={s.sidebar__link} activeClassName={s.active} to="/users">Users</NavLink>
+                </li>
+                <li className={`${s.sidebar__item} ${s.sidebar__item_mode}`}>
                     <NavLink  className={s.sidebar__link} activeClassName={s.active} to="/settings">Settings</NavLink>
                 </li>
             </ul>

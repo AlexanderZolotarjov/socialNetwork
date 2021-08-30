@@ -1,8 +1,6 @@
 
 .chats {
-    max-height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
     display: grid;
     grid-template-rows: 1fr 100px;
 
@@ -10,7 +8,7 @@
 .chats__body {
     padding: 10px;
     margin: 0 10px 0 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: 2px;
 }
 .chats__body::-webkit-scrollbar {

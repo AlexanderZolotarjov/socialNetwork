@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import s from './Music.module.css'
 
 

@@ -1,4 +1,7 @@
-"use strict"
+import dialogsReducer from './dialogs-reducer';
+import profileReducer from './profile-reducer';
+import contactsReducer from './contacts-reducer';
+
 
 export let store = {
     _state: {
@@ -48,66 +51,12 @@ export let store = {
     }, // Получения функции ререндера из index.js
 
     dispatch (action) {
-        if (action.type === 'ADD-POST') {
-            let quantityPosts = Object.keys(this._state.ProfilePage.PostsData).length;
-            let newPost = {
-                id: quantityPosts + 1,
-                message: this._state.ProfilePage.newPostText.text,
-                likesCount: 0,
-            }
-            this._state.ProfilePage.PostsData.push(newPost);
-            this._state.ProfilePage.newPostText.text = '';
-            this._callSubscriber(store._state);
-        } else if (action.type === 'CHANGE-AREA-POST') {
-            this._state.ProfilePage.newPostText.text = action.value;
-            this._callSubscriber(this._state);
-        } else if (action.type === 'ADD-CHAT') {
-            let quantityChats = this._state.DialogsPage.ChatsData.length + 1;
-            this._state.DialogsPage.ChatsData.push({
-                id: quantityChats,
-                personID: 1,
-                message: this._state.DialogsPage.newChatText.text
-            });
-            this._state.DialogsPage.newChatText.text = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'CHANGE-AREA-CHAT') {
-            this._state.DialogsPage.newChatText.text = action.value;
-            this._callSubscriber(this._state);
-        }
+        this._state.DialogsPage = dialogsReducer(this._state.DialogsPage, action);
+        this._state.ProfilePage = profileReducer(this._state.ProfilePage, action);
+        this._state.ContactsData = contactsReducer(this._state.ContactsData, action);
+        this._callSubscriber(store._state);
     },
 };
 
+
 window.store = store;
-
-// addPost () {
-//     let quantityPosts = Object.keys(this._state.ProfilePage.PostsData).length;
-//     let newPost = {
-//         id: quantityPosts + 1,
-//         message: this._state.ProfilePage.newPostText.text,
-//         likesCount: 0,
-//     }
-//     this._state.ProfilePage.PostsData.push(newPost);
-//     this._state.ProfilePage.newPostText.text = '';
-//     this._callSubscriber(store._state);
-// }, // Добавление нового поста
-// changeAreaPost (value) {
-//     this._state.ProfilePage.newPostText.text = value;
-//     this._callSubscriber(this._state);
-// }, // Отслеживание изменений поля постов
-// addChat () {
-//     let quantityChats = this._state.DialogsPage.ChatsData.length + 1;
-//     this._state.DialogsPage.ChatsData.push({
-//         id: quantityChats,
-//         personID: 1,
-//         message: this._state.DialogsPage.newChatText.text
-//     });
-//     this._state.DialogsPage.newChatText.text = '';
-//     this._callSubscriber(this._state);
-// }, // Добавление нового чата
-// changeAreaChat (value) {
-//     this._state.DialogsPage.newChatText.text = value;
-//     this._callSubscriber(this._state);
-// }, // Отслеживание изменений поля чатов
-
-
-

@@ -8,7 +8,7 @@ const SidebarFriend = (props) => {
         <li className={s.sidebarFriend__item}>
             <NavLink className={s.sidebarFriend__link} to="/profile/">
                 <div className={s.sidebarFriend__image}>
-                    <img src={props.photo}></img>
+                    <img alt="personalphoto" src={props.photo}></img>
                 </div>
                 <div className={s.sidebarFriend__name}>
                     {props.name}

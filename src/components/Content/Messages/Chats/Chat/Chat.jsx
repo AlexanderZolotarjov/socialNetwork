@@ -2,7 +2,7 @@ import s from './Chat.module.css'
 
 const Chat = (props) => {
     const authorID = 1;//айди автора с которым мы сравниваем текущий айди
-    if (props.authorID == authorID) {
+    if (props.authorID === authorID) {
         return (
             <div className={`${s.chat} ${s.chat_person}`}>
                 <div className={s.chat__body}>

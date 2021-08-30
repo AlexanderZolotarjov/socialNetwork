@@ -1,15 +1,15 @@
 import s from './Messages.module.css';
-import Contacts from './Contacts/Contacts';
-import Chats from './Chats/Chats';
+import ContactsContainer from './Contacts/ContactsContainer';
+import ChatsContainer from './Chats/ChatsContainer';
 
 const Messages = (props) => {
     return(
         <div className={s.messages}>
             <div className={s.messages__contacts}>
-                <Contacts contactsdata={props.contactsdata} />
+                <ContactsContainer />
             </div>
             <div className={s.messages__chats}>
-                <Chats dialogsdata={props.dialogsdata} contactsdata={props.contactsdata} dispatch={props.dispatch} />
+                <ChatsContainer />
             </div>
         </div>
     )

@@ -4,22 +4,19 @@ import React from 'react';
 let NewChat = (props) => {
     let newChatElement = React.createRef();
     
-    let onChatChange = () => {
-        props.dispatch({
-            type: 'CHANGE-AREA-CHAT',
-            value: newChatElement.current.value,
-        })
+    let callChatChange = () => {
+        props.onchatchange(newChatElement.current.value)
     };
-    let addChat = () => {
-        props.dispatch({type: 'ADD-CHAT'})
+    let callAddChat = () => {
+        props.addchat()
     };
     return (
         <div className={s.newchat}>
             <div className={s.newchat__input}>
-                <textarea onChange={ onChatChange } ref={newChatElement} value={props.dialogsdata.newChatText.text} ></textarea>
+                <textarea onChange={ callChatChange } ref={newChatElement} value={props.dialogsdata.newChatText} ></textarea>
             </div>
             <div className={s.newchat__button}>
-                <button onClick={ addChat }>send</button>
+                <button onClick={ callAddChat }>send</button>
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Content from './components/Content/Content';
 import Sidebar from './components/Sidebar/Sidebar';
-import SidebarFriends from './components/SidebarFriends/SidebarFriends';
+import SidebarFriendsContainer from './components/SidebarFriends/SidebarFriendsContainer';
+import Content from './components/Content/Content';
 
 const App = (props) => {
     return (
@@ -10,8 +10,8 @@ const App = (props) => {
             <div className="wrapper">
                 <Header />
                 <Sidebar />
-                <SidebarFriends contactsdata={props.state.ContactsData}/>
-                <Content state={props.state} dispatch={props.dispatch} />
+                <SidebarFriendsContainer />
+                <Content />
             </div>
         </div>
     );

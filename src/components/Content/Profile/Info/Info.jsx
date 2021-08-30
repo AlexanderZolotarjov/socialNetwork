@@ -4,7 +4,7 @@ const Info = () => {
     return (
         <div className={s.info}>
             <div className={s.info__photo}>
-                <img src="http://ucan.vn/upload/userfiles/blog/23122015/9-science-backed-reasons-to-own-a-dog.jpg"></img>
+                <img alt="personalPhoto" src="http://ucan.vn/upload/userfiles/blog/23122015/9-science-backed-reasons-to-own-a-dog.jpg"></img>
             </div>
             <div className={s.info__text}>
                 <div className={s.info__name}>Alex Alexeev</div>

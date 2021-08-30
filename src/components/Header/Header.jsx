@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header className={s.header}>
             <div className={s.header__image}>
-                <img src="https://kipmu.ru/wp-content/uploads/pchmnmr-2048x1415.jpg"></img>
+                <img alt="background-top" src="https://kipmu.ru/wp-content/uploads/pchmnmr-2048x1415.jpg"></img>
             </div>
         </header>
     )
