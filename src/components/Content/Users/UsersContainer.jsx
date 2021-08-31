@@ -1,10 +1,10 @@
 import Users from './Users';
 import {connect} from 'react-redux';
-import { addNewPeopleActionCreator, followUnfollowActionCreator } from './../../../redux/people-reducer'
+import { addNewPeopleActionCreator, followUnfollowActionCreator, setUsersActionCreator } from './../../../redux/people-reducer'
 
 let mapStateToProps = (state) => {
     return {
-        peopledata: state.PeoplePage
+        peopledata: state.PeoplePage.PeopleData
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -14,6 +14,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         followunfollow: (id) => {
             dispatch(followUnfollowActionCreator(id))
+        },
+        setusers: (PeopleData) => {
+            dispatch(setUsersActionCreator(PeopleData))
         }
     }
 }
