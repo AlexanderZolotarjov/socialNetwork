@@ -1,11 +1,12 @@
 import s from './User.module.css';
 import React from 'react';
+import userPhoto from '../../../../assets/images/user.jpeg'
 
 const User = (props) => {
     return(
         <div className={s.users__item}>
             <div className={s.users__photo}>
-                <img src={props.photo} alt="personalPhoto" />
+                <img src={props.photo ? props.photo : userPhoto} alt="personalPhoto" />
             </div>
             <div className={s.users__id}>
                 id <span>{props.id}</span>
