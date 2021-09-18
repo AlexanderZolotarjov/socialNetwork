@@ -1,44 +1,21 @@
 const ADD_NEW_PEOPLE = 'ADD_NEW_PEOPLE';
 const FOLLOW_UNFOLLOW = 'FOLLOW_UNFOLLOW';
 const SET_USERS = 'SET_USERS';
-
-// let newDefaultElements = [];
-// let quantityDefaultElements = 0;
-// let iteration = 0;
-
-// function getFiveDefautlElements(elements) {
-//     for (iteration; iteration < 5; iteration++) {
-//         if (elements[quantityDefaultElements]) {
-//             newDefaultElements = [...newDefaultElements, elements[quantityDefaultElements]]
-//             quantityDefaultElements++
-//         }
-//         else return newDefaultElements
-//     }
-//     return newDefaultElements
-// }
-
-// function getFiveElements(elements) {
-//     let newElements = [];
-//     for (let i = 0; i < 5; i++) {
-//         if (elements[quantityDefaultElements]) {
-//             newElements = [...newElements, elements[quantityDefaultElements]]
-//             quantityDefaultElements++
-//         }
-//         else return newElements
-//     }
-//     return newElements
-// }
-
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_PEOPLE_COUNT = 'SET_TOTAL_PEOPLE_COUNT';
 
 let initialState = {
-    PeopleData: []
+    PeopleData: [],
+    pageSize: 5,
+    totalPeopleCount: 0,
+    currentPage: 1
 }
 
 const peopleReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_USERS:
             return {
-                ...state, PeopleData: [...state.PeopleData, action.PeopleData][0]
+                ...state, PeopleData: [...action.PeopleData]
             }
         case ADD_NEW_PEOPLE:
             return {
@@ -54,6 +31,14 @@ const peopleReducer = (state = initialState, action) => {
                     }
                     return user
                 })
+            }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state, currentPage: action.currentPage
+            }
+        case SET_TOTAL_PEOPLE_COUNT:
+            return {
+                ...state, totalPeopleCount: action.totalPeopleCount
             }
         default: return state
     }
@@ -78,5 +63,19 @@ export const followUnfollowActionCreator = (userId) => {
         userId
     }
 }; // Создаём actions for followUnfollow 
+
+export const setCurrentPageActionCreator = (currentPage) => {
+    return {
+        type: SET_CURRENT_PAGE,
+        currentPage
+    }
+}; // Создаём actions for
+
+export const setTotalPeopleCountActionCreator = (totalPeopleCount) => {
+    return {
+        type: SET_TOTAL_PEOPLE_COUNT,
+        totalPeopleCount
+    }
+}; // Создаём actions for
 
 export default peopleReducer;

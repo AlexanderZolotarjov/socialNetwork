@@ -45,4 +45,80 @@
     border-radius: 10px;
     background: rgb(93, 93, 151);
 }
+.users__pagenumber {
+    display: flex;
+    justify-content: center;
+}
+.users__bodypagenumber {
+    
+}
+.user__pagenumber {
+    color: #655d84;
+}
+.user__pagenumber:hover {
+    cursor: pointer;
+}
+.user__pagenumber_active{
+    color: red;
+}
+
+
+
+
+
+.users__item {
+    min-height: 100px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid rgb(93, 93, 151);
+    margin: 5px 0 5px 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "photo name button"
+        "photo id button";
+        column-gap: 10px;
+}
+.users__photo {
+    grid-area: photo;
+    position: relative;
+}
+.users__photo img {
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.users__id {
+    grid-area: id;
+}
+.users__name {
+    grid-area: name;
+}
+.users__button {
+    font-size: 16px;
+    margin: 15px 0 15px 0;
+    grid-area: button;
+    background-color: rgba(123, 224, 64, 0.85);
+    border-radius: 8px;
+    width: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+.users__button_red {
+    background-color: rgb(255, 52, 79);
+    color: #fff;
+}
+.users__button:hover {
+    cursor: pointer;
+
+}
+
 
