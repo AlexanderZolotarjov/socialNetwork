@@ -99,6 +99,7 @@
 .users__name {
     grid-area: name;
 }
+
 .users__button {
     font-size: 16px;
     margin: 15px 0 15px 0;
